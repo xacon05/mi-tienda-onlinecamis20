@@ -3,128 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentación Profesional | Proyecto Bayeta</title>
+    <title>Panel Profesional - Bayeta Técnica</title>
     <style>
-        /* Reset y estilos base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Estética Minimalista y Seria */
+        :root {
+            --negro: #121212;
+            --gris-suave: #f5f5f7;
+            --azul-corp: #0071e3;
+            --blanco: #ffffff;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #ffffff;
-        }
-
-        /* Contenedor principal */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Encabezado */
-        header {
-            text-align: center;
-            margin-bottom: 60px;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: #1a1a1a;
-            letter-spacing: -1px;
-        }
-
-        /* Sección de contenido */
-        .main-content {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--blanco);
+            color: var(--negro);
+            margin: 0;
+            padding: 0;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
         }
 
-        .text-section {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .text-section h2 {
-            margin-bottom: 20px;
-            color: #444;
-        }
-
-        /* Estilo de la Imagen */
-        .image-section {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .product-image {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .product-image:hover {
-            transform: scale(1.02);
-        }
-
-        /* Pie de página */
-        footer {
+        .container {
+            max-width: 1100px;
+            width: 90%;
             margin-top: 80px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #888;
         }
 
-        /* Botón de acción */
-        .btn {
-            display: inline-block;
-            background: #1a1a1a;
-            color: #fff;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-weight: bold;
+        /* Estructura de Ficha Técnica */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
         }
+
+        .image-box {
+            background: var(--gris-suave);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        .image-box img {
+            width: 100%;
+            border-radius: 15px;
+            display: block;
+        }
+
+        .content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* EL BOTÓN QUE SÍ HACE ALGO */
+        .btn-principal {
+            background: var(--negro);
+            color: var(--blanco);
+            padding: 18px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-principal:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            background: var(--azul-corp);
+        }
+
+        /* SECCIÓN OCULTA (Se activa al pulsar) */
+        #detalles-tecnicos {
+            display: none; /* Empieza oculto */
+            margin-top: 60px;
+            padding: 40px;
+            background: var(--gris-suave);
+            border-radius: 20px;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .spec-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .spec-item h4 { margin: 0; color: var(--azul-corp); }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <header>
-            <h1>Catálogo de Productos</h1>
-        </header>
-
-        <main class="main-content">
-            <div class="text-section">
-                <h2>Innovación en Limpieza</h2>
-                <p>Presentamos nuestra solución técnica de alta absorción. Este material ha sido diseñado para ofrecer el máximo rendimiento en entornos profesionales, garantizando durabilidad y eficacia en cada pasada.</p>
-                <p>Ideal para superficies delicadas y uso intensivo en el sector industrial o doméstico.</p>
-                <a href="#" class="btn">Saber más</a>
+        <section class="hero">
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=800" alt="Bayeta Profesional">
             </div>
 
-            <div class="image-section">
-                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" 
-                     alt="Bayeta de microfibra profesional" 
-                     class="product-image">
+            <div class="content">
+                <h1>Bayeta Tech-Pro</h1>
+                <p class="tagline">La herramienta definitiva para el mantenimiento de superficies críticas. Ingeniería textil de alto impacto.</p>
+                
+                <button class="btn-principal" onclick="mostrarDetalles()">Saber más</button>
             </div>
-        </main>
+        </section>
 
-        <footer>
-            <p>&copy; 2026 Tu Empresa Profesional. Todos los derechos reservados.</p>
-        </footer>
+        <div id="detalles-tecnicos">
+            <h2>Especificaciones Técnicas</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h4>Absorción</h4>
+                    <p>800% de su peso</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Material</h4>
+                    <p>Microfibra HD</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Vida Útil</h4>
+                    <p>+500 Lavados</p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        // La lógica para que el botón funcione
+        function mostrarDetalles() {
+            var seccion = document.getElementById("detalles-tecnicos");
+            if (seccion.style.display === "none" || seccion.style.display === "") {
+                seccion.style.display = "block";
+                window.scrollTo({
+                    top: seccion.offsetTop,
+                    behavior: 'smooth'
+                });
+            } else {
+                seccion.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
