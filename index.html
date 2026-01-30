@@ -6,51 +6,81 @@
     <title>Venta Profesional - Vileda</title>
     <style>
         body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #ffffff;
-            color: #333;
+            margin: 0;
             display: flex;
             justify-content: center;
-            padding: 50px 20px;
+            align-items: center;
+            min-height: 100vh;
         }
         .container {
-            max-width: 900px;
+            max-width: 850px;
+            width: 90%;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            border: 1px solid #eee;
-            padding: 30px;
+            gap: 30px;
+            border: 1px solid #dddddd;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .foto-vileda {
+            background-color: #f9f9f9;
             border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
         .foto-vileda img {
             width: 100%;
-            border-radius: 5px;
+            height: auto;
+            display: block;
         }
-        h1 { color: #e2001a; margin-top: 0; }
+        h1 {
+            color: #e2001a; /* Rojo Vileda */
+            font-size: 2.2rem;
+            margin-top: 0;
+        }
+        .descripcion {
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 1.5;
+        }
         .contacto-box {
-            background: #f4f4f4;
+            background-color: #f4f4f4;
             padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
+            border-radius: 10px;
+            margin-top: 25px;
         }
-        .bizum {
+        .info-dato {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+        .bizum-numero {
             color: #00aae4;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
         .btn-pedido {
             display: block;
-            background: #1a1a1a;
+            background-color: #1a1a1a;
             color: white;
             text-align: center;
             padding: 15px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
+            border-radius: 8px;
+            margin-top: 20px;
+            transition: 0.3s;
         }
-        @media (max-width: 700px) { .container { grid-template-columns: 1fr; } }
+        .btn-pedido:hover {
+            background-color: #e2001a;
+        }
+        @media (max-width: 700px) {
+            .container { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -62,19 +92,19 @@
     
     <div class="info">
         <h1>Vileda Professional</h1>
-        <p>Bayeta de alta resistencia y máxima absorción. Ideal para resultados profesionales sin dejar huella.</p>
+        <p class="descripcion">Bayeta de alta resistencia y máxima absorción. Diseñada para resultados profesionales sin dejar rastros ni pelusas.</p>
         
         <div class="contacto-box">
-            <p><strong>Email:</strong> contacto@tuempresa.com</p>
-            <p><strong>Pago por Bizum:</strong> <span class="bizum">600 000 000</span></p>
+            <div class="info-dato"><strong>Email:</strong> contacto@tuempresa.com</div>
+            <div class="info-dato">
+                <strong>Pago por Bizum:</strong> <br>
+                <span class="bizum-numero">635 51 81 17</span>
+            </div>
         </div>
         
         <a href="mailto:contacto@tuempresa.com" class="btn-pedido">ENVIAR CORREO PARA PEDIDO</a>
     </div>
 </div>
-
-</body>
-</html>
 
 </body>
 </html>
